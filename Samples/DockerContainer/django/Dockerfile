@@ -12,7 +12,7 @@ COPY app .
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8000
+EXPOSE 8000 2222
 
 COPY init_container.sh /bin/
 
@@ -23,7 +23,5 @@ RUN  \
   && chmod 755 /bin/init_container.sh 
 
 COPY sshd_config /etc/ssh/
-
-EXPOSE 2222 
 
 CMD ["/bin/init_container.sh"]
